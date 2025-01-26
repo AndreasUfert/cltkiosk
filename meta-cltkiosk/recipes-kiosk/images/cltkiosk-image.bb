@@ -18,6 +18,10 @@ IMAGE_INSTALL:cubietruck:append = " \
     linux-firmware-bcm43362 \
 "
 
+IMAGE_INSTALL:intel-core2-32:append = " \
+    linux-firmware-rtl8723 \
+"
+
 do_sops() {
     # decrypt /etc/wireguard/wg0.conf
     sops -d -i ${IMAGE_ROOTFS}${sysconfdir}/wireguard/wg0.conf

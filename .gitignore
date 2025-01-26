@@ -2,3 +2,5 @@
 !/build/conf/
 /build.cubietruck/*
 !/build.cubietruck/conf/
+/build.intel-core2-32/*
+!/build.intel-core2-32/conf/
