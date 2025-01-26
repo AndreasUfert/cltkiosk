@@ -1,6 +1,6 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${BPN}:"
 
-SRC_URI += "file://wg0.conf"
+SRC_URI:cubietruck += "file://cubietruck/wg0.conf"
 
 RDEPENDS:${PN}:append = " \
     resolvconf \

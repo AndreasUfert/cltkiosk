@@ -1,2 +1,4 @@
 /build/*
 !/build/conf/
+/build.cubietruck/*
+!/build.cubietruck/conf/

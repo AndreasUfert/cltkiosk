@@ -9,10 +9,13 @@ IMAGE_FEATURES:remove = "splash"
 
 IMAGE_INSTALL:append = " \
     epiphany \
-    linux-firmware-bcm43362 \
     wpa-supplicant \
     wireguard-tools \
     tzdata \
+"
+
+IMAGE_INSTALL:cubietruck:append = " \
+    linux-firmware-bcm43362 \
 "
 
 do_sops() {
