@@ -2,23 +2,25 @@ SUMMARY = "Definition and configuration of the CLT kiosk image"
 
 require recipes-graphics/images/core-image-weston.bb
 
+IMAGE_FSTYPES += "wic.xz"
+
 IMAGE_FEATURES:append = " \
     read-only-rootfs \
 "
 IMAGE_FEATURES:remove = "splash"
 
-IMAGE_INSTALL:append = " \
+CORE_IMAGE_EXTRA_INSTALL:append = " \
     epiphany \
     wpa-supplicant \
     wireguard-tools \
     tzdata \
 "
 
-IMAGE_INSTALL:cubietruck:append = " \
+CORE_IMAGE_EXTRA_INSTALL:cubietruck:append = " \
     linux-firmware-bcm43362 \
 "
 
-IMAGE_INSTALL:intel-core2-32:append = " \
+CORE_IMAGE_EXTRA_INSTALL:intel-core2-32:append = " \
     linux-firmware-rtl8723 \
 "
 
