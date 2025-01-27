@@ -1,5 +1,6 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${BPN}:"
 
-SOURCES:append = " \
+SRC_URI:append = " \
 	file://wireguard.cfg \
+	file://rtl8723bs.cfg \
 "
