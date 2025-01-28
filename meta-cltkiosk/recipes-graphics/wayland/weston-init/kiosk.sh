@@ -23,4 +23,4 @@ eval $(dbus-launch --sh-syntax --exit-with-session)
 export DBUS_SESSION_BUS_ADDRESS
 export DBUS_SESSION_BUS_PID
 
-/usr/bin/epiphany --private-instance http://192.168.178.35:11090/discon/tft-display
+/usr/bin/epiphany --private-instance http://192.168.178.35:12345/cltkiosk
