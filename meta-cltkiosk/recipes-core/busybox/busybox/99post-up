@@ -1,0 +1,15 @@
+#!/bin/sh
+
+[ -z "$1" ] && echo "Error: should be called from udhcpc" && exit 1
+
+case "$1" in
+	bound)
+		/bin/busybox ntpd -q -p de.pool.ntp.org
+		[ "$serverid" != "192.168.178.1" ] && /usr/bin/wg-quick up wg0
+		;;
+	deconfig)
+		[ -e /sys/class/net/wg0 ] && /usr/bin/wg-quick down wg0
+		;;
+esac
+
+exit 0

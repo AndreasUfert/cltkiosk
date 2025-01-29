@@ -11,8 +11,6 @@ iface wlan0 inet dhcp
 	wireless_essid any
 	wpa-driver nl80211
 	wpa-conf /etc/wpa_supplicant.conf
-	post-up /bin/busybox ntpd -q -p de.pool.ntp.org
-	post-up /usr/bin/wg-quick up wg0
 
 # Wired interface
 auto eth0
