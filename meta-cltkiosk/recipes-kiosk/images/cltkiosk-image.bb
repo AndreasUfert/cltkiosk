@@ -7,7 +7,7 @@ IMAGE_FSTYPES += "wic.xz"
 IMAGE_FEATURES:append = " \
     read-only-rootfs \
 "
-IMAGE_FEATURES:remove = "splash"
+IMAGE_FEATURES:remove:intel-core2-32 = "splash"
 
 CORE_IMAGE_EXTRA_INSTALL:append = " \
     epiphany \
@@ -16,12 +16,13 @@ CORE_IMAGE_EXTRA_INSTALL:append = " \
     tzdata \
 "
 
-CORE_IMAGE_EXTRA_INSTALL:cubietruck:append = " \
+CORE_IMAGE_EXTRA_INSTALL:append:cubietruck = " \
     linux-firmware-bcm43362 \
 "
 
-CORE_IMAGE_EXTRA_INSTALL:intel-core2-32:append = " \
+CORE_IMAGE_EXTRA_INSTALL:append:intel-core2-32 = " \
     linux-firmware-rtl8723 \
+    efibootmgr \
 "
 
 do_sops() {
