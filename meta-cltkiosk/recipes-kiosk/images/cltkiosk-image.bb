@@ -10,10 +10,11 @@ IMAGE_FEATURES:append = " \
 IMAGE_FEATURES:remove:intel-core2-32 = "splash"
 
 CORE_IMAGE_EXTRA_INSTALL:append = " \
-    epiphany \
     wpa-supplicant \
     wireguard-tools \
     tzdata \
+    wpewebkit \
+    cog \
 "
 
 CORE_IMAGE_EXTRA_INSTALL:append:cubietruck = " \

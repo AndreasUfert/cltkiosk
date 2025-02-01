@@ -1,26 +1,18 @@
 #!/bin/sh
 
-VPN_HOST="192.168.178.35"
+BACKEND="http://192.168.178.35:12345/cltkiosk"
 
-# wait for IP to become available
-while ! ping -c 1 -W 1 $VPN_HOST > /dev/null 2>&1; do
+# wait for backend to become available
+while ! curl -s -o /dev/null -I -f "$BACKEND"; do
   sleep 1
 done
 
+# handle read-only home directory
 export XDG_CACHE_HOME=/tmp/weston/.cache
 export XDG_DATA_HOME=/tmp/weston/.local/share
-export XDG_CONFIG_HOME=/tmp/weston/.config
-export XDG_STATE_HOME=/tmp/weston/.local/state
-
 mkdir -p /tmp/weston/.cache
 mkdir -p /tmp/weston/.local/share
-mkdir -p /tmp/weston/.config
-mkdir -p /tmp/weston/.local/state
-
 chown -R weston:weston /tmp/weston
 
-eval $(dbus-launch --sh-syntax --exit-with-session)
-export DBUS_SESSION_BUS_ADDRESS
-export DBUS_SESSION_BUS_PID
-
-/usr/bin/epiphany --private-instance http://192.168.178.35:12345/cltkiosk
+# start browser, fullscreen/kiosk is handled by weston
+/usr/bin/cog --webprocess-failure=restart "$BACKEND"
