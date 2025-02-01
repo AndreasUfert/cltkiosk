@@ -1,10 +1,12 @@
 #!/bin/sh
 
+BACKEND_NETWORK="192.168.178.0/24"
 BACKEND="http://192.168.178.35:12345/cltkiosk"
 
-# wait for backend to become available
-while ! /bin/busybox wget -q --spider "$BACKEND"; do
-  sleep 1
+# wait for backend network to become available
+while ! /sbin/ip route | grep -q "^$BACKEND_NETWORK "; do
+  echo "Waiting for backend network..."
+  sleep 2
 done
 
 # handle read-only home directory
