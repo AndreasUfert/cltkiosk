@@ -1,7 +1,15 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${BPN}:"
 
-SRC_URI:append = " \
+SOURCES_K65:append:cubietruck = " \
 	file://0001-cubietruck-Consistent-nodes-for-mmc-devices.patch \
-	file://0001-Modify-MBUS-Driver-to-get-Mali-working-on-Sunxi-A20.patch \
+	file://0001-sun4i-Lima-Mesa-Lima-Display-issues-on-Sunxi-Boards.patch \
+"
+
+SOURCES:append:cubietruck = " \
+	file://0001-cubietruck-Consistent-nodes-for-mmc-devices.patch \
+	file://0001-sun4i-Lima-Mesa-Lima-Display-issues-on-Sunxi-Boards.patch \
+"
+
+SRC_URI:append:cubietruck = " \
 	file://wireguard.cfg \
 "

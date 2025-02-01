@@ -1,15 +1,15 @@
-From c23318c965780857b0420e9f0c3239d4658a6172 Mon Sep 17 00:00:00 2001
-From: master <dorna8550@gmail.com>
-Date: Sat, 5 Nov 2022 11:53:46 +0100
-Subject: [PATCH] Modify MBUS Driver to get Mali working on Sunxi A20 with 2GB
+From ffa92ae6d4148b38d229fc2aa12c1ee4980f20d5 Mon Sep 17 00:00:00 2001
+From: "A.Dorn" <dorna8550@gmail.com>
+Date: Tue, 22 Aug 2023 20:55:37 +0200
+Subject: [PATCH] sun4i/Lima : Mesa/Lima - Display issues on Sunxi-Boards
 
-Signed-off-by: master <dorna8550@gmail.com>
+Signed-off-by: A.Dorn <dorna8550@gmail.com>
 ---
- drivers/soc/sunxi/sunxi_mbus.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/soc/sunxi/sunxi_mbus.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/drivers/soc/sunxi/sunxi_mbus.c b/drivers/soc/sunxi/sunxi_mbus.c
-index d90e4a264..d9feea7b6 100644
+index 1734da357..8c9bbe8a6 100644
 --- a/drivers/soc/sunxi/sunxi_mbus.c
 +++ b/drivers/soc/sunxi/sunxi_mbus.c
 @@ -33,6 +33,7 @@ static const char * const sunxi_mbus_devices[] = {
@@ -20,14 +20,17 @@ index d90e4a264..d9feea7b6 100644
  	"allwinner,sun5i-a13-display-backend",
  	"allwinner,sun5i-a13-video-engine",
  	"allwinner,sun6i-a31-csi",
-@@ -41,6 +42,7 @@ static const char * const sunxi_mbus_devices[] = {
+@@ -41,8 +42,10 @@ static const char * const sunxi_mbus_devices[] = {
  	"allwinner,sun7i-a20-display-backend",
  	"allwinner,sun7i-a20-display-frontend",
  	"allwinner,sun7i-a20-video-engine",
 +	"allwinner,sun7i-a20-mali",
  	"allwinner,sun8i-a23-display-backend",
  	"allwinner,sun8i-a23-display-frontend",
++	"allwinner,sun8i-a23-mali",
  	"allwinner,sun8i-a33-display-backend",
+ 	"allwinner,sun8i-a33-display-frontend",
+ 	"allwinner,sun8i-a33-video-engine",
 -- 
-2.37.2
+2.39.2
 
