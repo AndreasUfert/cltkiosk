@@ -12,7 +12,7 @@ SRC_URI:append:intel-core2-32 = " \
 inherit update-rc.d
 
 INITSCRIPT_NAME = "wg-quick-init"
-INITSCRIPT_PARAMS = "defaults"
+INITSCRIPT_PARAMS = "start 05 1 2 3 4 5 . stop 75 0 6 ."
 
 RDEPENDS:${PN}:append = " \
     resolvconf \
