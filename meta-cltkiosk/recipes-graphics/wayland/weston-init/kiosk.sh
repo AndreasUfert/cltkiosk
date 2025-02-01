@@ -3,7 +3,7 @@
 BACKEND="http://192.168.178.35:12345/cltkiosk"
 
 # wait for backend to become available
-while ! curl -s -o /dev/null -I -f "$BACKEND"; do
+while ! /bin/busybox wget -q --spider "$BACKEND"; do
   sleep 1
 done
 
