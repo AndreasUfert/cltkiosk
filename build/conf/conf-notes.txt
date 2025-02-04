@@ -4,7 +4,9 @@
 You can now run 'bitbake <target>'
 
 Common targets are:
-    cltkiosk
+    mc:cubietruck:cltkiosk-image
+    mc:intel-corei7-32:cltkiosk-image
+    mc:intel-corei7-64:cltkiosk-image
 
 Other commonly useful commands are:
  - 'devtool' and 'recipetool' handle common recipe tasks

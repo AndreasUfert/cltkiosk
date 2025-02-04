@@ -8,6 +8,9 @@ SRC_URI:append:cubietruck = " \
 SRC_URI:append:intel-core2-32 = " \
     file://intel-core2-32/wg0.conf \
 "
+SRC_URI:append:intel-corei7-64 = " \
+    file://intel-corei7-64/wg0.conf \
+"
 
 inherit update-rc.d
 
